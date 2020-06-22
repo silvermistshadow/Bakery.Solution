@@ -8,11 +8,23 @@ namespace Bakery.Models
         public int Id { get; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Date { get; set; }
+        public double Price { get; set; }
 
         public Order(string title, string description)
         {
             Title = title;
             Description = description;
+            _instances.Add(this);
+            Id = _instances.Count;
+        }
+
+        public Order(string title, string description, string date, double price)
+        {
+            Title = title;
+            Description = description;
+            Date = date;
+            Price = price;
             _instances.Add(this);
             Id = _instances.Count;
         }
