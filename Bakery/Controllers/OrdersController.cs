@@ -1,18 +1,18 @@
+using Bakery.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Bakery.Models;
 
 namespace Bakery.Controllers
 {
-    public class OrdersController : Controller
-    {
+  public class OrdersController : Controller
+  {
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
-    
+
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
@@ -23,5 +23,5 @@ namespace Bakery.Controllers
       model.Add("vendor", vendor);
       return View(model);
     }
-    }
+  }
 }

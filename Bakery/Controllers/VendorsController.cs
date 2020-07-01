@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Bakery.Models;
+using System;
 
 namespace Bakery.Controllers
 {
@@ -20,7 +21,7 @@ namespace Bakery.Controllers
         }
 
         [HttpPost("/vendors/{vendorId}/orders")]
-        public ActionResult Create(int vendorId, string orderTitle, string orderDescription)
+        public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string orderDate, double orderPrice)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);

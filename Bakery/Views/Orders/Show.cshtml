@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>View Order</title>
+        @using Bakery.Models;
+    </head>
+    <body>
+        <h1>Order details:</h1>
+
+        <h2>Vendor: @Model["vendor"].Name</h2>
+        <h3>@Model["order"].Title</h3>
+        <h4>@Model["order"].Date</h4>
+        <p>@Model["order"].Description</p>
+        <p>@Model["order"].Price</p>
+
+        <p><a href="/vendors/@Model["vendor"].Id">Back to @Model["vendor"].Name</a></p>
+        <p><a href="/vendors">Back to vendor list</a></p>
+        <p><a href="/">Back home</a></p>
+    </body>
+</html>
