@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Bakery.Models
@@ -19,12 +20,12 @@ namespace Bakery.Models
             Id = _instances.Count;
         }
 
-        public Order(string title, string description, string date, double price)
+        public Order(string title, string description, string date, string price)
         {
             Title = title;
             Description = description;
             Date = date;
-            Price = price;
+            Price = Convert.ToDouble(price);
             _instances.Add(this);
             Id = _instances.Count;
         }
@@ -33,6 +34,7 @@ namespace Bakery.Models
         {
             return _instances;
         }
+
         public static void ClearAll()
         {
             _instances.Clear();
@@ -40,7 +42,7 @@ namespace Bakery.Models
 
         public static Order Find(int searchId)
         {
-            return _instances[searchId-1];
+            return _instances[searchId - 1];
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Bakery.Controllers
         }
 
         [HttpPost("/vendors/{vendorId}/orders")]
-        public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string orderDate, double orderPrice)
+        public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string orderDate, string orderPrice)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);

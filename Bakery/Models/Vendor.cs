@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Bakery.Models 
+namespace Bakery.Models
 {
     public class Vendor
     {
@@ -23,14 +23,17 @@ namespace Bakery.Models
         {
             _instances.Clear();
         }
+
         public static List<Vendor> GetAll()
         {
             return _instances;
         }
+
         public static Vendor Find(int searchId)
         {
-            return _instances[searchId-1];
+            return _instances[searchId - 1];
         }
+
         public void AddOrder(Order order)
         {
             Orders.Add(order);
