@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using Bakery.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace Bakery.Controllers
 {
@@ -25,7 +25,7 @@ namespace Bakery.Controllers
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);
-            Order newOrder = new Order(orderTitle, orderDescription);
+            Order newOrder = new Order(orderTitle, orderDescription, orderDate, orderPrice);
             foundVendor.AddOrder(newOrder);
             List<Order> vendorOrders = foundVendor.Orders;
             model.Add("orders", vendorOrders);
